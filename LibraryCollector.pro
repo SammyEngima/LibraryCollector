@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+CONFIG  += c++11
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = LibraryCollector
@@ -33,7 +33,7 @@ INCLUDEPATH += utils
 
 win32|win64{
   SOURCES += utils/dependencies_win.cpp
-  LIBS+= -lpsapi
+  LIBS+= -lpsapi -luser32 //Link with User32.lib
 
   RC_FILE=  rc.rc
   OTHER_FILES+= rc.rc
